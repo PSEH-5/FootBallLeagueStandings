@@ -1,5 +1,9 @@
 package com.football.league.api.standings.pojo;
 
+/**
+ * @author Marimuthu
+ *
+ */
 public class ErrorMessage {
 	public String errorcode;
 	public String errorMessage;

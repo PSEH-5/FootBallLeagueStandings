@@ -22,9 +22,12 @@ public class StandingsFBServiceImpl implements StandingsFBService {
 	@Autowired
 	StandingsFBDataConfiguration config;
 
+	/**
+	 *
+	 */
 	@Override
 	public String getCountryId(String countryName) throws StandingsFBException {
-		// TODO Auto-generated method stub
+
 		RestTemplate resttemplate = new RestTemplate();
 		ResponseEntity<Country[]> responsecountryList = resttemplate.getForEntity(config.getGetCountriesUrl(),
 				Country[].class);
@@ -45,6 +48,9 @@ public class StandingsFBServiceImpl implements StandingsFBService {
 
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public String getLeagueId(String country_Id) throws StandingsFBException {
 
@@ -57,7 +63,7 @@ public class StandingsFBServiceImpl implements StandingsFBService {
 		ResponseEntity<League[]> responseLeagueList = resttemplate.getForEntity(leagueUrl, League[].class);
 		
 		for (League league : responseLeagueList.getBody()) {
-			System.out.println("league == " + league.toString());
+			System.out.println("league list == " + league.toString());
 			league_Id = league.getLeague_id();
 		}
 		
@@ -69,6 +75,9 @@ public class StandingsFBServiceImpl implements StandingsFBService {
 	}
 
 
+	/**
+	 *
+	 */
 	@Override
 	public List<StandingsFBLeagueResponse> getStandingsData(String countryName, String leagueName, String teamName,String leaguePosition)
 			throws StandingsFBException {
@@ -94,7 +103,7 @@ public class StandingsFBServiceImpl implements StandingsFBService {
 			System.out.println("standings ==  " + standings.toString());
 			if (standings.getLeague_name().equalsIgnoreCase(leagueName)
 					&& standings.getCountry_name().equalsIgnoreCase(countryName)
-					&& standings.getTeam_name().equalsIgnoreCase(teamName)) {
+					&& standings.getTeam_name().equalsIgnoreCase(teamName) && standings.getOverall_league_position().equalsIgnoreCase(leaguePosition)) {
 				leagueResponse = new StandingsFBLeagueResponse();
 				leagueResponse.setCountry_id(country_Id);
 				leagueResponse.setCountry_name(standings.getCountry_name());

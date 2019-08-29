@@ -1,5 +1,9 @@
 package com.football.league.api.standings.pojo;
 
+/**
+ * @author Marimuthu
+ *
+ */
 public class StandingsFBLeagueRequest {
 	String countryName;
 	@Override

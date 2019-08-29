@@ -1,5 +1,9 @@
 package com.football.league.api.standings.pojo;
 
+/**
+ * @author Marimuthu
+ *
+ */
 public class League {
 
 	private String country_id;

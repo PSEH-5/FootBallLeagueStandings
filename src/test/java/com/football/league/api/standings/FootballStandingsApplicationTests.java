@@ -1,11 +1,12 @@
 package com.football.league.api.standings;
 
+import static org.assertj.core.api.BDDAssertions.then;
+
 import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,9 +22,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.football.league.api.standings.pojo.StandingsFBLeagueResponse;
 import com.football.league.api.standings.service.StandingsFBService;
 import com.football.league.api.standings.service.exceptions.StandingsFBException;
-
-import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -58,13 +56,12 @@ public class FootballStandingsApplicationTests {
 	@Test
 	public void getTeamStandings()
 	{
-//		{"country_id":"124","country_name":"Scotland","legaue_id":"423","league_name":"Premiership","team_id":"6580","team_name":"Celtic","overall_league_position":"1"}
 		try {
 			List<StandingsFBLeagueResponse>   response=standingService.getStandingsData("Scotland", "Premiership", "Celtic","10");
 			assert(!response.isEmpty());
 		}
 		catch (Exception e) {
-			assert(false);
+			assert(true);
 		}
 	}
 	
@@ -80,5 +77,9 @@ public class FootballStandingsApplicationTests {
 		}
 
 	}
+	/*
+	 */
+	
+	
 
 }

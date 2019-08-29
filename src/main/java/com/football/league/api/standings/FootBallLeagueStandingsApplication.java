@@ -3,6 +3,10 @@ package com.football.league.api.standings;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author Marimuthu
+ *
+ */
 @SpringBootApplication
 public class FootBallLeagueStandingsApplication {
 
