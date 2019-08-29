@@ -2,9 +2,12 @@ package com.football.league.api;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.client.RestTemplate;
 
 import com.football.league.api.pojo.FootBallLeagueResponse;
 import com.football.league.api.service.FootBallService;
@@ -35,6 +39,7 @@ public class FootballApplicationTests {
 	@LocalServerPort
 	private int port;
 
+	
 	@Value("${local.management.port}")
 	private int mgt;
 	
@@ -51,6 +56,22 @@ public class FootballApplicationTests {
 				"http://localhost:" + this.mgt + "/actuator/info", Map.class);
 
 		then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+	}
+	
+
+
+	@Test
+	public void getFootballTeamStanding() throws URISyntaxException {
+		RestTemplate restTemp = new RestTemplate();
+
+//		final String baseUrl ="http://localhost:9000/football/league/France/Ligue 2/Lorient/1";
+//		URI uri = new URI(baseUrl);
+//		ResponseEntity<String> result = restTemp.getForEntity(uri, String.class);
+//
+//		// Verify request succeed
+//		Assert.assertEquals(200, result.getStatusCodeValue());
+//		Assert.assertEquals(true, result.getBody().contains("\"team_id\":\"3044\""));
+
 	}
 	
 	@Test
