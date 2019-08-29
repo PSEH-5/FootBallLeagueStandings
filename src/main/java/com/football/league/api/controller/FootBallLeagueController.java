@@ -35,7 +35,7 @@ public class FootBallLeagueController {
 	 * @return
 	 * @throws FootBallException
 	 */
-	@RequestMapping(value = "/football/league/standings/{countryName}/{leagueName}/{teamName}/{leaguePosition}", method = RequestMethod.GET)
+	@RequestMapping(value = "/football/league/{countryName}/{leagueName}/{teamName}/{leaguePosition}", method = RequestMethod.GET)
 	public ResponseEntity<List<FootBallLeagueResponse>> getTeamStandings(
 			@PathVariable(value = "countryName", required = true) String countryName,
 			@PathVariable(value = "leagueName", required = true) String leagueName,
