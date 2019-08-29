@@ -1,0 +1,12 @@
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/FootBallLeagueStandingsApplication.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/pojo/ErrorMessage.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/controller/StandingsFBLeagueController.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/pojo/StandingsFBLeagueResponse.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/config/StandingsFBDataConfiguration.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/service/exceptions/standingsFBExceptionHandler.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/pojo/Country.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/pojo/League.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/service/exceptions/StandingsFBException.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/service/StandingsFBService.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/service/StandingsFBServiceImpl.java
+/Users/alpha/Desktop/Marimuthu_FootBallLeague/footBallLeague/src/main/java/com/football/league/api/standings/pojo/StandingsFBLeagueRequest.java
