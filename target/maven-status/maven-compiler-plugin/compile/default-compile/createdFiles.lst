@@ -5,6 +5,8 @@ com/football/league/api/pojo/Country.class
 com/football/league/api/service/FootBallService.class
 com/football/league/api/pojo/League.class
 com/football/league/api/pojo/FootBallLeagueResponse.class
+com/football/league/api/repository/LeagueRepostory.class
+com/football/league/api/repository/CountryRepository.class
 com/football/league/api/service/exceptions/FootBallExceptionHandler.class
 com/football/league/api/pojo/ErrorMessage.class
 com/football/league/api/pojo/FootBallLeagueRequest.class

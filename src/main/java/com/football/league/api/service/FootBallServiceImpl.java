@@ -14,6 +14,8 @@ import com.football.league.api.config.FootBallDataConfiguration;
 import com.football.league.api.pojo.Country;
 import com.football.league.api.pojo.FootBallLeagueResponse;
 import com.football.league.api.pojo.League;
+import com.football.league.api.repository.CountryRepository;
+import com.football.league.api.repository.LeagueRepostory;
 import com.football.league.api.service.exceptions.FootBallException;
 
 
@@ -22,17 +24,21 @@ public class FootBallServiceImpl implements FootBallService {
 
 	@Autowired
 	FootBallDataConfiguration config;
-
+	
+	@Autowired
+	CountryRepository countryRepo;
+	
+	@Autowired
+	LeagueRepostory lrepo;
+	
 	/**
 	 *
 	 */
 	@Override
 	public String getCountryId(String countryName) throws FootBallException {
-
-		RestTemplate resttemplate = new RestTemplate();
-		ResponseEntity<Country[]> responsecountryList = resttemplate.getForEntity(config.getGetCountriesUrl(),
-				Country[].class);
 		String country_Id = "";
+		ResponseEntity<Country[]> responsecountryList = countryRepo.getCountryId(countryName);
+		
 		
 		for (Country country : responsecountryList.getBody()) {
 			System.out.println("country == " + country.toString());
@@ -55,13 +61,8 @@ public class FootBallServiceImpl implements FootBallService {
 	@Override
 	public String getLeagueId(String country_Id) throws FootBallException {
 
-		RestTemplate resttemplate = new RestTemplate();
 		String league_Id = "";
-
-		String leagueUrl = UriComponentsBuilder.fromUriString(config.getGetleaguesurl())
-				.replaceQueryParam("country_id", country_Id).toUriString();
-
-		ResponseEntity<League[]> responseLeagueList = resttemplate.getForEntity(leagueUrl, League[].class);
+		ResponseEntity<League[]> responseLeagueList = lrepo.getLeagueId(country_Id);
 		
 		for (League league : responseLeagueList.getBody()) {
 			System.out.println("league list == " + league.toString());
