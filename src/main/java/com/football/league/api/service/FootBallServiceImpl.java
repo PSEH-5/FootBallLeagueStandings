@@ -81,7 +81,7 @@ public class FootBallServiceImpl implements FootBallService {
 	 *
 	 */
 	@Override
-	public List<FootBallLeagueResponse> getStandingsData(String countryName, String leagueName, String teamName,String leaguePosition)
+	public List<FootBallLeagueResponse> getFootBallStandingsData(String countryName, String leagueName, String teamName,String leaguePosition)
 			throws FootBallException {
 		// TODO Auto-generated method stub
 		RestTemplate resttemplate = new RestTemplate();

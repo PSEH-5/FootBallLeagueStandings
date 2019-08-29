@@ -10,6 +10,6 @@ public interface FootBallService {
 
 	String getLeagueId(String leagueName) throws FootBallException;
 
-	List<FootBallLeagueResponse> getStandingsData(String countryName, String leagueName, String teamName,String leaguePosition)
+	List<FootBallLeagueResponse> getFootBallStandingsData(String countryName, String leagueName, String teamName,String leaguePosition)
 			throws FootBallException;
 }

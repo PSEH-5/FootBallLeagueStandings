@@ -36,14 +36,14 @@ public class FootBallLeagueController {
 	 * @throws FootBallException
 	 */
 	@RequestMapping(value = "/football/league/{countryName}/{leagueName}/{teamName}/{leaguePosition}", method = RequestMethod.GET)
-	public ResponseEntity<List<FootBallLeagueResponse>> getTeamStandings(
+	public ResponseEntity<List<FootBallLeagueResponse>> getFootballTeamStanding(
 			@PathVariable(value = "countryName", required = true) String countryName,
 			@PathVariable(value = "leagueName", required = true) String leagueName,
 			@PathVariable(value = "teamName", required = true) String teamName,
 			@PathVariable(value = "leaguePosition", required = true) String leaguePosition)
 			throws FootBallException {
 		try {
-			List<FootBallLeagueResponse> responselist = standingservice.getStandingsData(countryName, leagueName,
+			List<FootBallLeagueResponse> responselist = standingservice.getFootBallStandingsData(countryName, leagueName,
 					teamName, leaguePosition);
 
 			return new ResponseEntity<List<FootBallLeagueResponse>>(responselist, HttpStatus.OK);
@@ -52,6 +52,6 @@ public class FootBallLeagueController {
 			return (ResponseEntity<List<FootBallLeagueResponse>>) ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	// http://localhost:9000/football/France/Ligue 2/Lorient
+	// http://localhost:9000/football/standings/France/Ligue 2/Lorient
 
 }
