@@ -52,6 +52,6 @@ public class FootBallLeagueController {
 			return (ResponseEntity<List<FootBallLeagueResponse>>) ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	// http://localhost:9000/football/standings/France/Ligue 2/Lorient
+	// http://localhost:9000/football/France/Ligue 2/Lorient
 
 }
